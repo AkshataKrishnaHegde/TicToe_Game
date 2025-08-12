@@ -1,0 +1,16 @@
+.grid {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.grid > * {
+  flex: 0 0 calc((100% - 2rem) / 3);
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* for debugging */
+}
+
+.turn-highlight{
+    color: white;
+}
