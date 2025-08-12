@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import Card from '../Card/Card'
 
 import './Grid.css'
@@ -23,7 +23,7 @@ function Grid({numberOfCards}){
     const [board,setBoard] =useState(Array(numberOfCards).fill(""));
     const [winner,setWinner]=useState("")
     
-    function play(index){
+    const play= useCallback(function playCallBack(index){
         console.log("move played",index)
         if(turn==true){
             board[index]="0";
@@ -38,7 +38,7 @@ function Grid({numberOfCards}){
     
         setBoard([...board]);
         setTurn(!turn);
-    }
+    },[]);
     function reset(){
         setBoard(Array(numberOfCards).fill(""));
         setWinner(null);

@@ -1,4 +1,5 @@
 import Icon from "../Icon/Icon";
+import {memo} from 'react';
 import './Card.css';
 function Card({onPlay,player,index,gameEnd}){
 
@@ -17,4 +18,4 @@ function Card({onPlay,player,index,gameEnd}){
     )
 }
 
-export default Card;
+export default memo(Card);
